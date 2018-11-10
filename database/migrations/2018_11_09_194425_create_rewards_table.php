@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateRewardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->integer('userId');
-            $table->string('userName');
-            $table->integer('userTypeId')->default(2);
-            $table->string('password');
+        Schema::create('rewards', function (Blueprint $table) {
+            $table->integer('rewardId');
+            $table->integer('rewardTypeId');
+            $table->string('rewardName');
+            $table->integer('rewardPoint');
+            $table->integer('rewardDiscount');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('rewards');
     }
 }

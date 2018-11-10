@@ -17,5 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::post('/login','');
+Route::get('/getAllUsers','UserController@getAllUsers');
+Route::post('/login','UserController@login');
+Route::get('/getActivities','ActivityController@getActivities');
+Route::post('/joinActivity','ActivityController@joinActivity');
+Route::get('/getActivityParticipants','ActivityController@getActivityParticipants');
+Route::get('/getRewards','RewardController@getRewards');
